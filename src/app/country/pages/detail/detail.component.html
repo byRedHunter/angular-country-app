@@ -1,0 +1,81 @@
+<div class="alert alert-info" *ngIf="!country; else divPais">
+  Espere por favor
+</div>
+
+<ng-template #divPais>
+  <div class="row mb-3">
+    <div class="col-12">
+      <h1 class="text-secondary">
+        País: <small>{{ country.name.common }}</small>
+      </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h4>Bandera</h4>
+      <img
+        [src]="country.flags.svg"
+        [alt]="country.name"
+        class="img-thumbnail"
+      />
+    </div>
+    <div class="col-8">
+      <h4>Información</h4>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <p class="m-0">
+            <strong>Población:</strong> {{ country.population | number }}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="m-0"><strong>Código alpha3:</strong> {{ country.cca3 }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <h4>Traducciones</h4>
+      </div>
+      <div class="col-12">
+        <span class="badge bg-info mr-1">{{
+          country.translations["ara"].official
+        }}</span>
+        <span class="badge bg-info mr-1">{{
+          country.translations["ces"].official
+        }}</span>
+        <span class="badge bg-info mr-1">{{
+          country.translations["cym"].official
+        }}</span>
+        <span class="badge bg-info mr-1">{{
+          country.translations["deu"].official
+        }}</span>
+        <span class="badge bg-info mr-1">{{
+          country.translations["est"].official
+        }}</span>
+        <span class="badge bg-info mr-1">{{
+          country.translations["fin"].official
+        }}</span>
+        <span class="badge bg-info mr-1">{{
+          country.translations["fra"].official
+        }}</span>
+        <span class="badge bg-info mr-1">{{
+          country.translations["ita"].official
+        }}</span>
+        <span class="badge bg-info mr-1">{{
+          country.translations["jpn"].official
+        }}</span>
+        <span class="badge bg-info mr-1">{{
+          country.translations["por"].official
+        }}</span>
+        <span class="badge bg-info mr-1">{{
+          country.translations["rus"].official
+        }}</span>
+        <span class="badge bg-info mr-1">{{
+          country.translations["spa"].official
+        }}</span>
+      </div>
+    </div>
+  </div>
+</ng-template>

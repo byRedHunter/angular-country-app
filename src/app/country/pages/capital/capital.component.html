@@ -1,0 +1,31 @@
+<h2 class="text-secondary">Por Capital</h2>
+<hr />
+
+<div class="row mb-4">
+  <div class="col-12">
+    <app-search
+      (onEnter)="search($event)"
+      placeholder="Buscar por capital"
+    ></app-search>
+  </div>
+</div>
+
+<div class="row" *ngIf="loading">
+  <div class="col-12">
+    <div class="alert alert-success">Loading...</div>
+  </div>
+</div>
+
+<div class="row" *ngIf="error">
+  <div class="col-12">
+    <div class="alert alert-warning">
+      No se encontro nada con el termino <strong>{{ termino }}</strong>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="!error && listCountries.length">
+  <div class="col">
+    <app-table [countries]="listCountries"></app-table>
+  </div>
+</div>
