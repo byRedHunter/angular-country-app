@@ -26,6 +26,7 @@ export class DetailComponent implements OnInit {
   error: boolean = false;
 
   ngOnInit(): void {
+    this.error = false;
     /* this.activateRoute.params.subscribe(({ id }) => {
       this.countryService.detailCountry(id).subscribe((country) => {
         console.log(country[0]);
@@ -38,5 +39,9 @@ export class DetailComponent implements OnInit {
         tap(console.log)
       )
       .subscribe((country) => (this.country = country[0]));
+
+    setTimeout(() => {
+      if (!this.country && !this.error) this.error = true;
+    }, 3000);
   }
 }

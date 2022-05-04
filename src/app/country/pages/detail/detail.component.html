@@ -1,5 +1,5 @@
 <div class="alert alert-info" *ngIf="!country; else divPais">
-  Espere por favor
+  {{ error ? "No hay resultado" : "Espere por favor" }}
 </div>
 
 <ng-template #divPais>
